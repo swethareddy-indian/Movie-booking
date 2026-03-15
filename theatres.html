@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Select Theatre</title>
+
+<style>
+
+body{
+font-family: Arial;
+text-align:center;
+background:black;
+color:white;
+}
+
+.container{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:30px;
+margin-top:40px;
+}
+
+.img-container{
+text-decoration:none;
+color:white;
+}
+
+.img-container img{
+width:220px;
+height:150px;
+border-radius:10px;
+transition:0.3s;
+}
+
+.img-container img:hover{
+transform:scale(1.1);
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>Select a Theatre</h1>
+
+<div class="container" id="theaterList"></div>
+
+<script>
+
+let params = new URLSearchParams(window.location.search);
+
+let city = params.get("city") || "Hyderabad";
+let genre = params.get("genre") || "Romantic";
+let language = params.get("language") || "English";
+
+let theaters = {
+
+Hyderabad:[
+{name:"PVR Cinemas", img:"pvr.jpg"},
+{name:"INOX", img:"inox.jpg"},
+{name:"Prasads", img:"prasads.jpg"}
+],
+
+Bangalore:[
+{name:"Orion Mall", img:"orion.jpg"},
+{name:"Forum Mall", img:"forum.jpg"},
+{name:"Cinepolis", img:"cinepolis.jpg"}
+]
+
+};
+
+let list="";
+
+theaters[city].forEach(theater=>{
+
+list+=`
+<a href="movies.html?genre=${genre}&language=${language}&city=${city}&theater=${theater.name}" class="img-container">
+
+<img src="${theater.img}" alt="${theater.name}">
+
+<p>${theater.name}</p>
+
+</a>
+`;
+
+});
+
+document.getElementById("theaterList").innerHTML=list;
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Show Timing</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: url("showtime-bg.jpg") no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .showtime {
+            display: inline-block;
+            margin: 20px;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .showtime:hover {
+            transform: scale(1.1);
+        }
+        .showtime p {
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Select a Show Timing</h1>
+
+<div class="container">
+    <div class="showtime">
+        <a href="payment.html?time=morning">
+            <p>Morning Show - 10:00 AM</p>
+        </a>
+    </div>
+    <div class="showtime">
+        <a href="payment.html?time=evening">
+            <p>Evening Show - 6:00 PM</p>
+        </a>
+    </div>
+    <div class="showtime">
+        <a href="payment.html?time=night">
+            <p>Night Show - 9:00 PM</p>
+        </a>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Language</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <h1>Select Your Preferred Language</h1>
+    <div class="container">
+        <a id="langEnglish" class="img-container">
+            <img src="english.jpg" alt="English">
+            <p>English</p>
+        </a>
+        <a id="langTelugu" class="img-container">
+            <img src="telugu.jpg" alt="Telugu">
+            <p>Telugu</p>
+        </a>
+    </div>
+
+    <script>
+let params = new URLSearchParams(window.location.search);
+let genre = params.get("genre");
+
+document.getElementById("langEnglish").href =
+`location.html?genre=${genre}&language=English`;
+
+document.getElementById("langTelugu").href =
+`location.html?genre=${genre}&language=Telugu`;
+</script>
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Confirmation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: url("confirmation-bg.jpg") no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+        }
+        .container {
+            margin-top: 50px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            display: inline-block;
+            border-radius: 10px;
+        }
+        .message {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .confirmed { color: lightgreen; }
+        .canceled { color: red; }
+    </style>
+</head>
+<body>
+
+<h1>Booking Status</h1>
+
+<div class="container">
+    <p id="statusMessage" class="message"></p>
+    <a href="miniproject.html"><button>Go to Homepage</button></a>
+</div>
+
+<script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const status = urlParams.get("status");
+    const statusMessage = document.getElementById("statusMessage");
+
+    if (status === "confirmed") {
+        statusMessage.innerHTML = "🎉 Your movie ticket booking is confirmed!";
+        statusMessage.classList.add("confirmed");
+    } else {
+        statusMessage.innerHTML = "❌ Your booking has been canceled. Thank you!";
+        statusMessage.classList.add("canceled");
+    }
+</script>
+
+</body>
+</html>

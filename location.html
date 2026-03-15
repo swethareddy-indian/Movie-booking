@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Location</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <h1>Select Your City</h1>
+    <div class="container">
+        <a id="cityHyderabad" class="img-container">
+            <img src="hyderabad.jpg" alt="Hyderabad">
+            <p>Hyderabad</p>
+        </a>
+        <a id="cityBangalore" class="img-container">
+            <img src="bangalore.jpg" alt="Bangalore">
+            <p>Bangalore</p>
+        </a>
+    </div>
+
+    <script>
+let params = new URLSearchParams(window.location.search);
+
+let genre = params.get("genre");
+let language = params.get("language");
+
+document.getElementById("cityHyderabad").href =
+`theatres.html?genre=${genre}&language=${language}&city=Hyderabad`;
+
+document.getElementById("cityBangalore").href =
+`theatres.html?genre=${genre}&language=${language}&city=Bangalore`;
+</script>
+</body>
+</html>

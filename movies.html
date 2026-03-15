@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Select a Movie</title>
+
+<style>
+
+body{
+font-family: Arial;
+text-align:center;
+background:black;
+color:white;
+}
+
+.container{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:30px;
+margin-top:40px;
+}
+
+.movie{
+text-decoration:none;
+color:white;
+}
+
+.movie img{
+width:200px;
+height:280px;
+border-radius:10px;
+transition:0.3s;
+}
+
+.movie img:hover{
+transform:scale(1.1);
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>Select a Movie</h1>
+
+<div class="container" id="movieList"></div>
+
+<script>
+
+let params = new URLSearchParams(window.location.search);
+
+let genre = params.get("genre") || "Romantic";
+let language = params.get("language") || "English";
+
+genre = genre.charAt(0).toUpperCase() + genre.slice(1).toLowerCase();
+language = language.charAt(0).toUpperCase() + language.slice(1).toLowerCase();
+
+let movies = {
+
+Romantic_English:[
+{name:"Titanic",img:"down5.jpg"},
+{name:"The Notebook",img:"down4.jpg"}
+],
+
+Romantic_Telugu:[
+{name:"Geetha Govindam",img:"down3.jpg"},
+{name:"Sita Ramam",img:"down2.jpg"}
+],
+
+Action_English:[
+{name:"John Wick",img:"down10.jpg"},
+{name:"Mad Max",img:"down11.jpg"}
+],
+
+Action_Telugu:[
+{name:"RRR",img:"down14.jpg"},
+{name:"Baahubali",img:"down15.jpg"}
+],
+
+Comedy_English:[
+{name:"Home Alone",img:"down16.jpg"},
+{name:"Mask",img:"down17.jpg"}
+],
+
+Comedy_Telugu:[
+{name:"Jathi Ratnalu",img:"down18.jpg"},
+{name:"F2",img:"down19.jpg"}
+],
+Horror_English:[
+{name:"The Conjuring",img:"down20.jpg"},
+{name:"Insidious",img:"down21.jpg"}
+],
+Horror_Telugu:[
+{name:"Kanchana",img:"down20.jpg"},
+{name:"Pizza",img:"down21.jpg"}
+]
+};
+
+let movieKey = genre + "_" + language;
+
+let movieList = document.getElementById("movieList");
+
+if(movies[movieKey]){
+
+movies[movieKey].forEach(movie=>{
+
+let m = document.createElement("a");
+
+m.href = `showtime.html?movie=${movie.name}`;
+
+m.className = "movie";
+
+m.innerHTML = `
+<img src="${movie.img}" alt="${movie.name}">
+<p>${movie.name}</p>
+`;
+
+movieList.appendChild(m);
+
+});
+
+}else{
+
+movieList.innerHTML = "<h2 style='color:red'>No movies available</h2>";
+
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Genre</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: url("genre-bg.jpg") no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .genre {
+            display: inline-block;
+            margin: 20px;
+            text-align: center;
+            cursor: pointer;
+        }
+        .genre img {
+            width: 200px;
+            height: 300px;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+        .genre img:hover {
+            transform: scale(1.1);
+        }
+        .genre p {
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Select Your Favorite Genre</h1>
+
+<div class="container">
+    <div class="genre">
+        <a href="language.html?genre=romantic">
+            <img src="romantic.jpg" alt="Romantic Movies">
+            <p>Romantic</p>
+        </a>
+    </div>
+    <div class="genre">
+        <a href="language.html?genre=action">
+            <img src="action.jpg" alt="Action Movies">
+            <p>Action</p>
+        </a>
+    </div>
+    <div class="genre">
+        <a href="language.html?genre=comedy">
+            <img src="comedy.jpg" alt="Comedy Movies">
+            <p>Comedy</p>
+        </a>
+    </div>
+    <div class="genre">
+        <a href="language.html?genre=horror">
+            <img src="horror.jpg" alt="Horror Movies">
+            <p>Horror</p>
+        </a>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Romantic Movies</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: pink;
+            padding: 20px;
+        }
+        .container {
+            max-width: 700px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px gray;
+        }
+        .movie {
+            display: inline-block;
+            margin: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+        .movie img {
+            width: 150px;
+            height: 200px;
+            border-radius: 10px;
+        }
+        .movie:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Romantic Movies</h2>
+
+    <div class="container">
+        <div class="movie" onclick="bookMovie('Titanic')">
+            <img src="titanic.jpg" alt="Titanic">
+            <p><strong>Titanic</strong> (1997)</p>
+        </div>
+
+        <div class="movie" onclick="bookMovie('The Notebook')">
+            <img src="notebook.jpg" alt="The Notebook">
+            <p><strong>The Notebook</strong> (2004)</p>
+        </div>
+
+        <div class="movie" onclick="bookMovie('La La Land')">
+            <img src="lalaland.jpg" alt="La La Land">
+            <p><strong>La La Land</strong> (2016)</p>
+        </div>
+    </div>
+
+    <script>
+        function bookMovie(movie) {
+            window.location.href = "booking.html?movie=" + encodeURIComponent(movie);
+        }
+    </script>
+
+</body>
+</html>
